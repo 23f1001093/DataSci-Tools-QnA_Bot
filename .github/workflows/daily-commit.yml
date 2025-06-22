@@ -1,9 +1,9 @@
 name: Daily Commit
 
 on:
+  workflow_dispatch:        # Allows manual trigger via GitHub UI
   schedule:
-    # Run every day at 04:30 UTC (10:00 AM IST)
-    - cron: '30 4 * * *'
+    - cron: '30 4 * * *'    # Runs daily at 04:30 UTC (10:00 AM IST)
 
 jobs:
   commit-job:
@@ -21,6 +21,8 @@ jobs:
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
+          git status
           git add daily.txt
-          git commit -m "Daily commit: $(date)" || echo "No change's to commit"
+          git status
+          git commit -m "Daily commit: $(date)" || echo "No changes to commit"
           git push
