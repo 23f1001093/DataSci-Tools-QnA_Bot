@@ -5,6 +5,9 @@ on:
   schedule:
     - cron: '30 4 * * *'
 
+permissions:
+  contents: write  # Required to allow commit and push
+
 jobs:
   commit-job:
     runs-on: ubuntu-latest
