@@ -1,0 +1,33 @@
+description: "TDS Virtual TA Evaluation"
+
+providers:
+  - id: https
+    provider: https
+    config:
+      url: http://127.0.0.1:8000/query
+      method: POST
+      headers:
+        Content-Type: application/json
+      body: |
+        {
+          "question": "{{ question }}"{% if image %},
+          "image": "{{ image }}"{% endif %}
+        }
+      transformResponse: json
+
+tests:
+  - name: Prerequisites
+    vars:
+      question: "What are the prerequisites for the Tools in Data Science course?"
+
+  - name: GPT model decision
+    vars:
+      question: "Should I use gpt-4o-mini which AI proxy supports, or gpt3.5 turbo?"
+
+  - name: Submission format
+    vars:
+      question: "What is the format for submitting the project?"
+
+  - name: Evaluation criteria
+    vars:
+      question: "How is Project 1 going to be evaluated?"
