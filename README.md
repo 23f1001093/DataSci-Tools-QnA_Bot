@@ -1,6 +1,6 @@
-# Virtual Teaching Assistant API
+# DataSci-Tools-QnA_Bot
 
-A virtual TA that automatically answers student questions using course materials and Discourse forum discussions.
+A virtual TA that automatically answers student questions using course(Tools in Data Science) materials and Discourse forum discussions.
 
 ## Overview
 
