@@ -1,4 +1,7 @@
 .env
+<<<<<<< HEAD
 venv/
 .vscode/
 .DS_Store
+=======
+>>>>>>> 3d39cbe2d138793d87e122e7ec8130b15f8cfb54
